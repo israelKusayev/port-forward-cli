@@ -1,0 +1,9 @@
+{
+  "services": [
+    {
+      "name": "vision-synapse",
+      "port": 9041
+    }
+  ],
+  "namespaces": ["qa", "stage"]
+}
