@@ -40,5 +40,5 @@ jobs:
           command: yarn run lint
 
       - run:
-          name: 'Build TS'
-          command: yarn run build-ts
+          name: 'Run build'
+          command: yarn run build
