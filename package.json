@@ -1,21 +1,40 @@
 {
-  "name": "nodets-starter",
+  "name": "portf",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "cli for easily port-forward services in kubernetes to various namespaces",
+  "main": "dist/index.js",
+  "bin": {
+    "pf": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israelKusayev/port-forward-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/israelKusayev/port-forward-cli/issues"
+  },
   "scripts": {
+    "prepublishOnly": "yarn lint && yarn build",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
     "build": "tsc",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
   },
   "author": "Israel kusayev",
-  "license": "ISC",
+  "license": "MIT",
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
   },
+  "keywords": [
+    "cli",
+    "kubernetes",
+    "port-forward"
+  ],
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@types/eslint": "^6.1.4",
     "@types/node": "^13.1.8",

@@ -15,5 +15,5 @@
     "**/dist": true,
     "**/coverage": true
   },
-  "cSpell.words": ["circleci", "kubectl", "promisify"]
+  "cSpell.words": ["circleci", "kubectl", "kubernetes", "kusayev", "portf", "promisify", "respawn"]
 }

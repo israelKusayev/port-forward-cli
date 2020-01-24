@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import childProcess from 'child_process';
 import util from 'util';
 import inquirer from 'inquirer';
