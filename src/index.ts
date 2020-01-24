@@ -5,12 +5,11 @@ import util from 'util';
 import inquirer from 'inquirer';
 import fs from 'fs';
 import inquirerTablePrompt from 'inquirer-table-prompt';
-import { configPath, logPath, configExamplePath } from './config';
+import { configPath, logPath } from './config';
 import { configurations, configFile } from './types';
 
 const exec = util.promisify(childProcess.exec);
 const readFile = util.promisify(fs.readFile);
-const copyFile = util.promisify(fs.copyFile);
 
 const loadConfiguration = async () => {
   try {
@@ -21,14 +20,7 @@ const loadConfiguration = async () => {
       services: services.map((service, index) => ({ ...service, value: index })),
       namespaces: namespaces.map(namespace => ({ name: namespace, value: namespace }))
     } as configurations;
-  } catch (error) {
-    try {
-      await copyFile(configExamplePath, configPath);
-      console.log(`config file was created in ${configPath} you can change it now`);
-    } catch (error) {
-      console.error('could not write configuration file', error);
-    }
-  }
+  } catch (error) {}
 };
 
 const showTable = async () => {
