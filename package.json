@@ -4,7 +4,8 @@
   "description": "cli for easily port-forward services in kubernetes to various namespaces",
   "main": "dist/index.js",
   "bin": {
-    "pf": "dist/index.js"
+    "pf": "dist/index.js",
+    "pf-edit": "dist/editConfig.js"
   },
   "repository": {
     "type": "git",
