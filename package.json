@@ -1,11 +1,10 @@
 {
   "name": "portf",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "cli for easily port-forward services in kubernetes to various namespaces",
   "main": "dist/index.js",
   "bin": {
-    "pf": "dist/index.js",
-    "pf-edit": "dist/editConfig.js"
+    "pf": "dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -38,14 +37,15 @@
     "dist"
   ],
   "devDependencies": {
-    "@types/eslint": "^6.1.4",
-    "@types/node": "^13.1.8",
-    "@typescript-eslint/eslint-plugin": "^2.17.0",
-    "@typescript-eslint/parser": "^2.17.0",
+    "@types/eslint": "^6.1.7",
+    "@types/node": "^13.7.0",
+    "@types/yargs": "^15.0.3",
+    "@typescript-eslint/eslint-plugin": "^2.18.0",
+    "@typescript-eslint/parser": "^2.18.0",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "husky": "^4.2.0",
+    "husky": "^4.2.1",
     "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
@@ -55,7 +55,8 @@
   },
   "dependencies": {
     "@types/inquirer": "^6.5.0",
-    "inquirer": "^7.0.3",
-    "inquirer-table-prompt": "^0.1.0"
+    "inquirer": "^7.0.4",
+    "inquirer-table-prompt": "^0.2.1",
+    "yargs": "^15.1.0"
   }
 }
