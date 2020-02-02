@@ -1,6 +1,6 @@
 import fs from 'fs';
 import util from 'util';
-import { configExamplePath, configPath } from '.';
+import { configExamplePath, configPath } from '../config';
 
 const copyFile = util.promisify(fs.copyFile);
 
