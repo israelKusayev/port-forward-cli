@@ -1,25 +1,10 @@
 import childProcess from 'child_process';
 import util from 'util';
 import inquirer from 'inquirer';
-import fs from 'fs';
 import inquirerTablePrompt from 'inquirer-table-prompt';
-import { configPath, logPath } from '../config';
-import { configurations, configFile } from '../types';
+import { logPath, loadConfiguration } from '../config';
 
 const exec = util.promisify(childProcess.exec);
-const readFile = util.promisify(fs.readFile);
-
-const loadConfiguration = async () => {
-  try {
-    const fileBuffer = await readFile(configPath);
-    if (!fileBuffer) throw new Error('file not exists');
-    const { namespaces, services } = JSON.parse(fileBuffer.toString()) as configFile;
-    return {
-      services: services.map((service, index) => ({ ...service, value: index })),
-      namespaces: namespaces.map(namespace => ({ name: namespace, value: namespace }))
-    } as configurations;
-  } catch (error) {}
-};
 
 export default async () => {
   const { namespaces, services } = await loadConfiguration();
